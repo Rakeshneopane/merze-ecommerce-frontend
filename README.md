@@ -9,7 +9,7 @@ Built with a React frontend, Node.js/Express backend, and MongoDB database.
 
 ## 🌐 Demo Link  
 
-**Live Demo:** https://my-ecommerce-frontend-dnhsvnqgb-rakeshneopanes-projects.vercel.app/
+**Live Demo:** https://my-ecommerce-frontend-dnhsvnqgb-rakeshneopanes-projects.vercel.app/ <br />
 **Backend API**: https://my-ecommerce-eta-ruby.vercel.app/
 
 ---
@@ -73,32 +73,30 @@ npm run dev
 
 ### Frontend Environment Variables
 Create a .env file in the root of the frontend project.
+
 Example .env
-```
-VITE_API_BASE_URL=https://your-backend-api-url.com
-```
+- VITE_API_BASE_URL=https://your-backend-api-url.com
+
 ### Backend Environment Variables
 
 Create a .env file in the root of the backend project.
 
-Example .env (Backend)
-```
-PORT=3000
-MONGODB_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/merze
-NODE_ENV=development
-```
-
+Example .env (Backend) <br />
 Required Backend Keys
-Key: 	
-- PORT  "Port number for backend server"
-- MONGODB_URI	"MongoDB connection string"
-- NODE_ENV	"Application environment"
+- PORT = 3000
+- MONGODB_URI = mongodb+srv://<username>:<password>@cluster.mongodb.net/merze
+- NODE_ENV = development
+
+Description: 
+- PORT = "Port number for backend server"
+- MONGODB_URI = "MongoDB connection string"
+- NODE_ENV= "Application environment"
 
 **Add .env to .gitignore**
 
 ### Required Environment Variables
 Key :
-- VITE_API_BASE_URL	
+- VITE_API_BASE_URL	<br/>
 Description :
 - Base URL of the backend API 
 Restart the dev server after updating .env
