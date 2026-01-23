@@ -72,35 +72,27 @@ npm run dev
 ## Environment Setup
 
 ### Frontend Environment Variables
-Create a .env file in the root of the frontend project.
+Create a .env file in the root of the frontend project. <br />
 
 Example .env
 - VITE_API_BASE_URL=https://your-backend-api-url.com
 
 ### Backend Environment Variables
-
 Create a .env file in the root of the backend project.
 
-Example .env (Backend) <br />
-Required Backend Keys
-- PORT = 3000
-- MONGODB_URI = mongodb+srv://<username>:<password>@cluster.mongodb.net/merze
-- NODE_ENV = development
+#### Server
+- PORT=4000
+- NODE_ENV=development
 
-Description: 
+#### Database
+- MONGODB_URI = mongodb+srv://<username>:<password>@cluster.mongodb.net/merze
+
+#### Description: 
 - PORT = "Port number for backend server"
 - MONGODB_URI = "MongoDB connection string"
 - NODE_ENV= "Application environment"
 
-# Add .env to .gitignore #
-
-### Required Environment Variables
-#### Key :
-  - VITE_API_BASE_URL	<br/>
-#### Description :
-  - Base URL of the backend API 
-Restart the dev server after updating .env
-
+# Add .env to .gitignore
 ---
 
 ## API Endpoints Used
