@@ -92,13 +92,13 @@ Description:
 - MONGODB_URI = "MongoDB connection string"
 - NODE_ENV= "Application environment"
 
-**Add .env to .gitignore**
+# Add .env to .gitignore #
 
 ### Required Environment Variables
-Key :
-- VITE_API_BASE_URL	<br/>
-Description :
-- Base URL of the backend API 
+#### Key :
+  - VITE_API_BASE_URL	<br/>
+#### Description :
+  - Base URL of the backend API 
 Restart the dev server after updating .env
 
 ---
