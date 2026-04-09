@@ -9,7 +9,7 @@ Built with a React frontend, Node.js/Express backend, and MongoDB database.
 
 ## 🌐 Demo Link  
 
-**Live Demo:** https://my-ecommerce-frontend-dnhsvnqgb-rakeshneopanes-projects.vercel.app/ <br />
+**Live Demo:** https://my-ecommerce-frontend-khaki.vercel.app/ <br />
 **Backend API**: https://my-ecommerce-eta-ruby.vercel.app/
 
 ---
