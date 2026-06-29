@@ -7,23 +7,6 @@ Built with a React frontend, Node.js/Express backend, and MongoDB database.
 
 ---
 
-## 🌐 Demo Link  
-
-**Live Demo:** https://my-ecommerce-frontend-khaki.vercel.app/ <br />
-**Backend API**: https://my-ecommerce-eta-ruby.vercel.app/
-
----
-
-## ⚡ Quick Start  
-
-```bash
-git clone https://github.com/Rakeshneopane/my-ecommerce-frontend.git
-cd my-ecommerce-app
-npm install
-npm run dev 
-```
----
-
 ## Technologies
 - React JS
 - React Router
@@ -36,93 +19,148 @@ npm run dev
 
 ---
 
-## 🎥 Demo Video
+## 🌐 Demo
 
-### Watch a walkthrough covering all major features of the e-commerce platform:
-- Loom Video Link:  https://www.loom.com/share/25adf0ed43c242d1adc0fad96495302f
+- **Frontend:** [Live Demo](https://my-ecommerce-frontend-khaki.vercel.app/)
+- **Backend API:** [Backend API](https://my-ecommerce-eta-ruby.vercel.app/)
+- 🎥 **Loom Walkthrough:** [Watch Here](https://www.loom.com/share/25adf0ed43c242d1adc0fad96495302f)
+
+---
+
+## Authentication
+
+This project was built before I learned authentication with JWT, Clerk, or OAuth.
+
+Users can register with an email address and log in using that same email. The application does not implement secure authentication or password hashing. The primary focus of this project was building a complete e-commerce workflow, including product browsing, shopping cart management, order placement, and RESTful API integration.
+
+Secure authentication is listed as a future improvement.
+
+---
+
+## ⚡ Quick Start  
+
+### 1. Clone and run the backend
+
+```bash
+git clone https://github.com/Rakeshneopane/merze-ecommerce-backend.git
+cd merze-ecommerce-backend
+npm install
+npm run dev
+```
+
+### 2. Clone and run the frontend
+
+Open a second terminal:
+
+```bash
+git clone https://github.com/Rakeshneopane/merze-ecommerce-frontend.git
+cd merze-ecommerce-frontend
+npm install
+npm run dev
+```
+
+The frontend communicates with the backend running on `http://localhost:4000`.
+
+---
+
+## 🔐 Environment Setup
+
+### Frontend
+
+Create a `.env` file inside the frontend project:
+
+```env
+VITE_API_BASE_URL=http://localhost:4000
+```
+
+For production:
+
+```env
+VITE_API_BASE_URL=https://my-ecommerce-eta-ruby.vercel.app
+```
+
+### Backend
+
+Create a `.env` file inside the backend project:
+
+```env
+PORT=4000
+NODE_ENV=development
+
+MONGODB_URI=your_mongodb_connection_string
+```
+
+For production, replace the localhost URLs with your deployed backend URL.
+
+> **Note:**
+>
+> - Restart the development server after updating the `.env` file.
+> - Add `.env` to `.gitignore` to avoid committing sensitive credentials.
 
 ---
 
 ## ✨ Features
 
 ### Product Browsing
-- Views a list of all products
+- Displays a list of all products
 - Filters products by section and type
-- Views detailed product information
+- Displays detailed product information
 
 ### Cart & Orders
-- Adds products to the cart
+- Adds products to the shopping cart
 - Updates product quantity in the cart
 - Removes products from the cart
-- Places orders with selected address and payment mode
+- Places orders using a selected address and payment method
 
 ### User Management
-- Registers a new user
-- Logs in using email
-- Views user profile and order history
-- Adds, updates, and deletes addresses
+- Registers new users
+- Allows users to log in using their email
+- Displays user profile and order history
+- Adds, updates, and deletes delivery addresses
 
 ### UI & Architecture
 - Uses reusable React components
 - Implements client-side routing with React Router
 - Handles loading, empty, and error states predictably
 
+
 ---
 
-## Environment Setup
+## API Reference
 
-### Frontend Environment Variables
-Create a .env file in the root of the frontend project. <br />
-
-Example .env
-- VITE_API_BASE_URL=https://your-backend-api-url.com
-
-### Backend Environment Variables
-Create a .env file in the root of the backend project.
-
-#### Server
-- PORT=4000
-- NODE_ENV=development
-
-#### Database
-- MONGODB_URI = mongodb+srv://<username>:<password>@cluster.mongodb.net/merze
-
-#### Description: 
-- PORT = "Port number for backend server"
-- MONGODB_URI = "MongoDB connection string"
-- NODE_ENV= "Application environment"
-
-# Add .env to .gitignore
----
-
-## API Endpoints Used
 ### Products
-- GET /api/products – Fetch all products
-- GET /api/products/:productId – Fetch product by ID
-- POST /api/create-products – Create product (admin)
-- POST /api/products/:productId – Update product
-- DELETE /api/products/:productId – Delete product
-### Sections & Types
-- GET /sections – Fetch all sections
-- POST /sections – Create section
-- GET /types – Fetch all types
-- POST /types – Create type
-### Users
-- POST /api/users – Create a user
-- GET /api/users – Fetch all users
-- GET /api/user/:id – Fetch user by ID
-- DELETE /api/user/:id – Delete user
-### Addresses
-- POST /api/users/:id/addresses – Add address
-- POST /api/users/:userId/addresses/:addressId – Update address
-- DELETE /api/users/:userId/addresses/:addressId – Delete address
-### Orders
-- POST /api/orders – Place an order
-### Authentication
-- POST /api/auth/login – Login user via email
+- `GET /api/products` – Fetch all products
+- `GET /api/products/:productId` – Fetch product by ID
+- `POST /api/create-products` – Create product (admin)
+- `POST /api/products/:productId` – Update product
+- `DELETE /api/products/:productId` – Delete product
 
-- Sample Response 
-```
+### Sections & Types
+- `GET /sections` – Fetch all sections
+- `POST /sections` – Create section
+- `GET /types` – Fetch all types
+- `POST /types` – Create type
+
+### Users
+- `POST /api/users` – Create a user
+- `GET /api/users` – Fetch all users
+- `GET /api/user/:id` – Fetch user by ID
+- `DELETE /api/user/:id` – Delete user
+
+### Addresses
+- `POST /api/users/:id/addresses` – Add address
+- `POST /api/users/:userId/addresses/:addressId` – Update address
+- `DELETE /api/users/:userId/addresses/:addressId` – Delete address
+
+### Orders
+- `POST /api/orders` – Place an order
+
+### Authentication
+- `POST /api/auth/login` – Login user via email
+
+### Sample Response (`GET /api/products`)
+
+```json
 {
   "data": [
     {
@@ -146,29 +184,34 @@ Create a .env file in the root of the backend project.
   ]
 }
 ```
+
 ---
 
-## Screen Shots
+## 📷 Screenshots
 
-![alt text](./public/image1.png)
-![alt text](./public/image2.png)
-![alt text](./public/image3.png)
-![alt text](./public/image.png)
+![Homepage](./public/image1.png)
+![Product Listing](./public/image2.png)
+![Shopping Cart](./public/image3.png)
+![Checkout](./public/image.png)
 
 ---
 
 ## Future Improvements
-- User authentication (JWT)
+
+- Secure JWT-based authentication with password hashing
+- Protected routes for authenticated users
+- Role-based authorization (Admin/User)
 - Order history for users
 - Payment gateway integration (Stripe / Razorpay)
-- Admin dashboard for product & order management
-- Guest login
+- Admin dashboard for product and order management
 
 ---
 
-## Contact
+## 📬 Contact
 
-For bugs, feedback, or feature requests, please reach out to:
-📧 rakeshneopane@gmail.com or lucasneopane123@gmail.com
-LinkedIn: https://linkedin.com/in/rakesh-neopane
+For bugs, feedback, or feature requests, feel free to reach out:
+
+- 📧 Email: rakeshneopane@gmail.com
+- 📧 Alternate Email: lucasneopane123@gmail.com
+- 💼 LinkedIn: https://linkedin.com/in/rakesh-neopane
 
